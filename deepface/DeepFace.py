@@ -758,6 +758,9 @@ def represent(img_path, model_name = 'VGG-Face', model = None, enforce_detection
 	if img == -1:
 		print("Image returned 0, skip confirmed")
 		return -1
+	
+	if img == -1:
+		return -1
 
 	#---------------------------------
 	#custom normalization
