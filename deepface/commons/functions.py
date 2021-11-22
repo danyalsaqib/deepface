@@ -167,10 +167,13 @@ def preprocess_face(img, target_size=(224, 224), grayscale = False, enforce_dete
 	#img might be path, base64 or numpy array. Convert it to numpy whatever it is.
 	img = load_image(img)
 
+	#if img is None:
+	#	print("Can't Load Image, skipping this image\n")
+	#	lol = -1
+        #	return lol
+	
 	if img is None:
-		print("Can't Load Image, skipping this image\n")
-		lol = -1
-        	return lol
+		return -1
 	
 	base_img = img.copy()
 
