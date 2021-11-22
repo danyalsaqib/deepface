@@ -2,6 +2,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 import os
+import numpy as np
 #os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
@@ -759,7 +760,7 @@ def represent(img_path, model_name = 'VGG-Face', model = None, enforce_detection
 	#	print("Image returned 0, skip confirmed")
 	#	return -1
 	
-	if img.all() == -1:
+	if np.sum(img) == -1:
 		return -1
 
 	#---------------------------------
