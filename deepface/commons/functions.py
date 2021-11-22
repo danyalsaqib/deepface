@@ -166,6 +166,10 @@ def preprocess_face(img, target_size=(224, 224), grayscale = False, enforce_dete
 
 	#img might be path, base64 or numpy array. Convert it to numpy whatever it is.
 	img = load_image(img)
+	if img is None:
+		lol = "Can't Load Image, skipping this image"
+		print(lol)
+        	return 0
 	base_img = img.copy()
 
 	img, region = detect_face(img = img, detector_backend = detector_backend, grayscale = grayscale, enforce_detection = enforce_detection, align = align)
