@@ -754,7 +754,8 @@ def represent(img_path, model_name = 'VGG-Face', model = None, enforce_detection
 		, enforce_detection = enforce_detection
 		, detector_backend = detector_backend
 		, align = align)
-	if img == 0:
+	
+	if img == -1:
 		print("Image returned 0, skip confirmed")
 		return -1
 
