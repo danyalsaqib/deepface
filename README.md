@@ -1,3 +1,6 @@
+# Danyal's Disclaimer
+This fork is made by me, Danyal Saqib, to make changes and edit the library according to my own project requirements.
+
 # deepface
 
 [![Downloads](https://pepy.tech/badge/deepface)](https://pepy.tech/project/deepface)
@@ -14,7 +17,7 @@ Deepface is a lightweight [face recognition](https://sefiks.com/2018/08/06/deep-
 The easiest way to install deepface is to download it from [`PyPI`](https://pypi.org/project/deepface/). It's going to install the library itself and its prerequisites as well.
 
 ```python
-pip install deepface
+pip install -e git+https://github.com/danyalsaqib/deepface#egg=deepface
 ```
 
 Then you will be able to import the library and use its functionalities.
