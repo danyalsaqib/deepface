@@ -103,6 +103,8 @@ def detect_face(img, detector_backend = 'opencv', grayscale = False, enforce_det
 	face_detector = FaceDetector.build_model(detector_backend)
 
 	detected_face, img_region = FaceDetector.detect_face(face_detector, detector_backend, img, align)
+	print("Output from FaceDetector - detected_face: ", detected_face)
+	print("Output from FaceDetector - img_region: ", img_region)
 
 	if (isinstance(detected_face, np.ndarray)):
 		return detected_face, img_region
