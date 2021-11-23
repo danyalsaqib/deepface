@@ -35,8 +35,12 @@ def detect_face(face_detector, detector_backend, img, align = True):
 
     obj = detect_faces(face_detector, detector_backend, img, align)
 
+    if len(obj) > 1:
+        return -1 #discard multiple faces
+	
     if len(obj) > 0:
         face, region = obj[0] #discard multiple faces
+
     else: #len(obj) == 0
         face = None
         region = [0, 0, img.shape[0], img.shape[1]]
