@@ -179,6 +179,9 @@ def preprocess_face(img, target_size=(224, 224), grayscale = False, enforce_dete
 
 	img, region = detect_face(img = img, detector_backend = detector_backend, grayscale = grayscale, enforce_detection = enforce_detection, align = align)
 
+	if (np.sum(img) == -1) & (np.sum(region) == -1):
+		print("Multiple Faces detected - Skipping Image")
+		return -1
 	#--------------------------
 
 	if img.shape[0] == 0 or img.shape[1] == 0:
