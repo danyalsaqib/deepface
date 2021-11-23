@@ -107,6 +107,7 @@ def detect_face(img, detector_backend = 'opencv', grayscale = False, enforce_det
 	print("Output from FaceDetector - img_region: ", img_region)
 
 	if (isinstance(detected_face, np.ndarray)):
+		print("Successfully about to return\n")
 		return detected_face, img_region
 	else:
 		if detected_face == None:
@@ -180,7 +181,8 @@ def preprocess_face(img, target_size=(224, 224), grayscale = False, enforce_dete
 	base_img = img.copy()
 
 	img, region = detect_face(img = img, detector_backend = detector_backend, grayscale = grayscale, enforce_detection = enforce_detection, align = align)
-
+	print("Function successfully returns\n")
+	
 	if (np.sum(img) == -1) & (np.sum(region) == -1):
 		print("Multiple Faces detected - Skipping Image")
 		return -1
